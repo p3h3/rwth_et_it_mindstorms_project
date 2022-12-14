@@ -1,0 +1,22 @@
+function soundsensor()
+
+    v = messung;
+
+    x_
+
+    plot()
+end
+
+function values = messung()
+    handle = EV3();
+    handle.connect("usb");
+
+    values = [];
+
+
+    for i = [1:1000]
+        values(i) = handle.sensor1.value;
+    end
+
+    handle.disconnect();
+end
