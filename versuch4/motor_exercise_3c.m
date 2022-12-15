@@ -12,7 +12,7 @@
 % * convert the reponse cell array into numbers using "str2double"
 %
 % ... insert here your code
-prompt={'Zahl 1','Zahl 1'};
+prompt={'Zahl 1','Zahl 2'};
    name='Input for Peaks function';
    numlines=1;
    defaultanswer={'1','1'};

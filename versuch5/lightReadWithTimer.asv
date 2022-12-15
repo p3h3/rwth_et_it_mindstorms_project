@@ -7,18 +7,16 @@ function lightReadWithTimer(brickObj, numberOfSeconds)
     set(t, 'StopFcn', @readLightTimerFcn);
     set(t, 'TimerFcn', @readLightTimerFcn);
     set(t, 'ErrorFcn', @readLightTimerFcn);
-    set(t, 'Period', 0.05);
-    set(t, 'StartDelay', 0);
-    myData.values = zeros(2,2);
+    set(t, 'Period', 1);
+    set(t, 'StartDelay', 3);
+    myData.values = [];
     myData.brick = brickObj;
     set(t, 'UserData', myData);
-
-    tic;
     start(t)
-    pause(numberOfSeconds);
+    pause(10);
     stop(t);
 
-    
+    tic;
 
     values = t.UserData.values;
 

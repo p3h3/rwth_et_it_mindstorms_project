@@ -10,7 +10,6 @@ function lightReadWithLoop(brickObj, numberOfSeconds)
         values(index, 1) = brickObj.sensor4.value;
         values(index, 2) = toc;
         
-        pause(0.2);
     end
 
     values

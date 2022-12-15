@@ -45,7 +45,7 @@ switch cell2mat(operation)
     case "div"
         rad1 = angle(num1 / num2);
         Vec1 = num1/num2;
-        fprintf("mul")
+        fprintf("div")
     case "conj"
         rad1 = angle(conj(num1));
         Vec1 = conj(num1);
@@ -82,7 +82,7 @@ angle_show(realang1, realang10)
 
 pause(5);
 
-angle_show(rad2deg(rad1), 0)
+angle_show(rad2deg(rad1)+90, 0)
 
 
 

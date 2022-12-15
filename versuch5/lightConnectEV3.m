@@ -19,13 +19,13 @@ end
 if strcmp (sensorMode, 'ambient')
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % IHR CODE HIER ...
-  brickObj.sensorX.mode = DeviceMode.Color.Ambient;
+  brickObj.sensor4.mode = DeviceMode.Color.Ambient;
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 elseif strcmp (sensorMode, 'reflect')
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % IHR CODE HIER ...
-  brickObj.sensorX.mode = DeviceMode.Color.Reflect;
+  brickObj.sensor4.mode = DeviceMode.Color.Reflect;
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 else
