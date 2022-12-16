@@ -164,3 +164,18 @@ function angle_show(ang1, ang10)
     handle.disconnect();
 end
 
+
+
+function readLightTimerFcn (timerObj, event)
+    
+    vals = timerObj.UserData.values
+
+    index = length(vals) + 1;
+    vals(index, 1) = timerObj.UserData.brick.sensor4.value;
+    vals(index, 2) = toc;
+
+    timerObj.UserData.values = vals;
+
+    fprintf("moin");
+
+end
