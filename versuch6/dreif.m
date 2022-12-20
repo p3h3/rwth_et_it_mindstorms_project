@@ -1,10 +1,14 @@
 function dreif()
     handle = EV3();
+    close all
+    clc
     
     handle.connect("usb");
     s = handle.sensor4;
     
     m1 = handle.motorA;
+
+    
 
     mb = handle.motorB;
     mc = handle.motorC;
@@ -15,6 +19,8 @@ function dreif()
     m1.brakeMode = 'Brake';
 
     m1.resetTachoCount();
+
+    m1.tachoCount()
 
     values = zeros(1,2);
 
@@ -69,12 +75,6 @@ function dreif()
 
     opening = (opening_end+opening_start)/2
 
-
-
-
-
-
-
     polarplot(values(:,3), values(:,1));
     axis padded
 
@@ -85,30 +85,31 @@ function dreif()
     pause(1)
 
 
-
-    mb.limitValue = 5000;
-    mb.power = -40;
+    %FAhrzeug dreht sih zur Öffnung
+    %mb.limitValue = 5000;
+    mb.power = -10;
     mb.brakeMode = 'Brake';
 
-    mc.limitValue = 5000;
-    mc.power = 40;
+    %mc.limitValue = 5000;
+    mc.power = 10;
     mc.brakeMode = 'Brake';
 
-    handle.sensor3.reset();
+    %handle.sensor3.reset();
 
     mb.start();
     mc.start();
 
-    while handle.sensor4.value > 45
+    while handle.sensor4.value < 45
+        %fprintf("%f\n", handle.sensor4.value())
         pause(0.1)
     end
 
-    pause(0.2)
+    pause(0.05)
 
     mb.stop();
     mc.stop();
 
-
+    %Fahrzeug fährt gerade aus der Öffnung raus
     mb.limitValue = 5000;
     mb.power = 70;
     mb.brakeMode = 'Brake';
