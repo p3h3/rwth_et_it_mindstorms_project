@@ -24,9 +24,9 @@ ylim([-1 size+2])
  
 
 for y=1:laenge
-    move.moveDown(handle);
+    move.Down(handle);
     for x=1:breite
-        move.moveRight(handle);
+        move.Right(handle);
         scanValue = handle.sensor4.value;
         if scanValue == 6       %Leer
             plot(x,y,"*",'Color','w');
@@ -42,12 +42,12 @@ for y=1:laenge
         end
     end
     for x=1:breite
-        move.moveLeft(handle);
+        move.mLeft(handle);
     end
 end
 
 for y=1:laenge
-    move.moveUp(handle);
+    move.Up(handle);
 end
 
 values
