@@ -7,7 +7,8 @@ size = 8;
 
 clc
 
-values = zeros(size:size);
+values = (size:size);
+values(:) = 2
 
 handle.sensor4.mode = DeviceMode.Color.Col;
 
@@ -23,11 +24,13 @@ ylim([-1 size+2])
 
 for x = 1:8
     for y = 1:8
-        values(x,y) = handle.sensor4.value;
-        if values(x,y) == 6
+        scanValue = handle.sensor4.value;
+        if scanValue == 6
             plot(x,y,"*",'Color','g');
-        elseif values(x,y) ~= 6
+            
+        elseif scanValue ~= 6
             plot(x,y,"square",'Color','k');
+            values(x,y) = -1
         end
         
         pause(0.2);
