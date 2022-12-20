@@ -4,19 +4,13 @@ function scan = einscannen(laenge, breite)
     scan = zeros(laenge, breite);
     resetPos();
 
-    for y=1:laenge
+    for x=1:laenge
+        scan(y_Pos, x_Pos) = takeSample();
+        moveRight();
         moveDown();
-        for x=1:breite
-            moveRight();
-            scan(y_Pos, x_Pos) = takeSample();
-        end
-        for x=1:breite
+        for y=1:breite
             moveLeft();
         end
-    end
-
-    for y=1:laenge
-        moveUp();
     end
 end
 

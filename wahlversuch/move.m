@@ -1,6 +1,6 @@
 %% bewegt den Farbsensor nach hinten
 function moveUp(handle)
-    m2 = handle.motorB
+    m2 = handle.motorB;
 
     m2.power = 20;
     m2.limitMode = 'tachoCount';
@@ -11,7 +11,7 @@ function moveUp(handle)
     m2.waitFor();
     m2.stop();
 
-    y_Pos = y_Pos + 1;
+    handle.y_Pos = y_Pos + 1;
 
 end
 
@@ -19,7 +19,7 @@ end
 
 %% bewegt den Farbsensor nach vorne
 function moveDown(handle)
-    m2 = handle.motorB
+    m2 = handle.motorB;
 
     m2.power = -20;
     m2.limitMode = 'tachoCount';
@@ -30,7 +30,7 @@ function moveDown(handle)
     m2.waitFor();
     m2.stop();
 
-    y_Pos = y_Pos - 1;
+    handle.y_Pos = y_Pos - 1;
 
 end
 
@@ -38,7 +38,7 @@ end
 
 %% bewegt den Papierträger nach links
 function moveLeft(handle)
-    m1 = handle.motorC
+    m1 = handle.motorC;
 
     m1.power = -20;
     m1.limitMode = 'tachoCount';
@@ -49,7 +49,7 @@ function moveLeft(handle)
     m1.waitFor();
     m1.stop();
 
-    x_Pos = x_Pos - 1;
+    handle.x_Pos = x_Pos - 1;
 
 end
 
@@ -58,7 +58,7 @@ end
 
 %% bewegt den Papierträger nach rechts
 function moveRight(handle)
-    m1 = handle.motorC
+    m1 = handle.motorC;
 
     m1.power = 20;
     m1.limitMode = 'tachoCount';
@@ -69,7 +69,7 @@ function moveRight(handle)
     m1.waitFor();
     m1.stop();
 
-    x_Pos = x_Pos +1;
+    handle.x_Pos = x_Pos +1;
 
 end
 
