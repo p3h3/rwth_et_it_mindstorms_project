@@ -8,7 +8,7 @@ classdef move
         m2.power = 20;
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
-        m2.limitValue = 10;
+        m2.limitValue = 15;
         m2.resetTachoCount();
 
         m2.start();
@@ -25,7 +25,7 @@ classdef move
         m2.power = -20;
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
-        m2.limitValue = 10;
+        m2.limitValue = 15;
         m2.resetTachoCount();
 
         m2.start();
@@ -42,7 +42,7 @@ classdef move
         m1.power = -20;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
-        m1.limitValue = 10;
+        m1.limitValue = 15;
         m1.resetTachoCount();
 
         m1.start();
@@ -57,7 +57,7 @@ classdef move
         m1.power = -20;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
-        m1.limitValue = 15*fields;
+        m1.limitValue = 18*fields;
         m1.resetTachoCount();
 
         m1.start();
@@ -75,7 +75,7 @@ classdef move
         m1.power = 20;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
-        m1.limitValue = 10;
+        m1.limitValue = 15;
         m1.resetTachoCount();
 
         m1.start();
@@ -91,7 +91,7 @@ classdef move
         m1.power = -20;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
-        m1.limitValue = 300;
+        m1.limitValue = 400;
         m1.resetTachoCount();
 
         m1.start();
@@ -103,7 +103,7 @@ classdef move
         m2.power = 20;
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
-        m2.limitValue = 300;
+        m2.limitValue = 400;
         m2.resetTachoCount();
 
         m2.start();
