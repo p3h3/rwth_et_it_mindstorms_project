@@ -1,14 +1,15 @@
 handle = EV3();
-handle.connect('usb')
+handle.connect('usb','beep','on')
 
 close all
 
-size = 8;
+laenge = 5;
+breite = 5;
 
 clc
 
 values = (size:size);
-values(:) = 2
+values(:) = 2;
 
 handle.sensor4.mode = DeviceMode.Color.Col;
 
@@ -16,36 +17,37 @@ handle.sensor4.mode = DeviceMode.Color.Col;
 figure();
 plot(0,0,"diamond",'Color','b');
 hold on
-plot(size+1,size+1,"diamond",'Color','b');
+grid on
+plot(laenge+1,breite+1,"diamond",'Color','b');
 xlim([-1 size+2])
 ylim([-1 size+2])
  
 
 for y=1:laenge
-    moveDown();
+    move.moveDown(handle);
     for x=1:breite
-        moveRight();
+        move.moveRight(handle);
         scanValue = handle.sensor4.value;
         if scanValue == 6       %Leer
-            plot(x,y,"*",'Color','g');
+            plot(x,y,"*",'Color','w');
         elseif scanValue == 1   %Barriere
             plot(x,y,"square",'Color','k');
             values(x,y) = -1
         elseif scanValue == 3   %Startpunkt
-            plot(x,y,"o",'Color','k');
+            plot(x,y,"o",'Color','g');
             values(x,y) = 1
         elseif scanValue == 5   %Ziel
-            plot(x,y,"o",'Color','k');
+            plot(x,y,"o",'Color','r');
             values(x,y) = 0
         end
     end
     for x=1:breite
-        moveLeft();
+        move.moveLeft(handle);
     end
 end
 
 for y=1:laenge
-    moveUp();
+    move.moveUp(handle);
 end
 
 values
