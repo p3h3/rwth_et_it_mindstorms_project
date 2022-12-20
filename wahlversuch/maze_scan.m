@@ -3,12 +3,12 @@ handle.connect('usb','beep','on')
 
 close all
 
-laenge = 5;
-breite = 5;
+laenge = 20;
+breite = 20;
 
 clc
 
-values = (size:size);
+values = (laenge:breite);
 values(:) = 2;
 
 handle.sensor4.mode = DeviceMode.Color.Col;
@@ -18,10 +18,11 @@ figure();
 plot(0,0,"diamond",'Color','b');
 hold on
 grid on
-plot(laenge+1,breite+1,"diamond",'Color','b');
-xlim([-1 size+2])
-ylim([-1 size+2])
+plot(breite+1,laenge+1,"diamond",'Color','b');
+xlim([-1 breite+2])
+ylim([-1 laenge+2])
  
+move.resetPos(handle);  
 
 for y=1:laenge
     move.Down(handle);
@@ -41,14 +42,14 @@ for y=1:laenge
             values(x,y) = 0
         end
     end
-    for x=1:breite
-        move.mLeft(handle);
-    end
+    move.Left2(handle, breite);
 end
 
 for y=1:laenge
     move.Up(handle);
 end
+
+move.resetPos(handle); 
 
 values
 

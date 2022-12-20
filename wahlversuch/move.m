@@ -7,6 +7,7 @@ classdef move
 
         m2.power = 20;
         m2.limitMode = 'Tacho';
+        m2.brakeMode = 'Brake';
         m2.limitValue = 10;
         m2.resetTachoCount();
 
@@ -23,6 +24,7 @@ classdef move
 
         m2.power = -20;
         m2.limitMode = 'Tacho';
+        m2.brakeMode = 'Brake';
         m2.limitValue = 10;
         m2.resetTachoCount();
 
@@ -39,7 +41,23 @@ classdef move
 
         m1.power = -20;
         m1.limitMode = 'Tacho';
+        m1.brakeMode = 'Brake';
         m1.limitValue = 10;
+        m1.resetTachoCount();
+
+        m1.start();
+        m1.waitFor();
+        m1.stop();
+    end
+
+    %% bewegt den Papierträger nach links
+    function Left2(handle, fields)
+        m1 = handle.motorC;
+
+        m1.power = -20;
+        m1.limitMode = 'Tacho';
+        m1.brakeMode = 'Brake';
+        m1.limitValue = 15*fields;
         m1.resetTachoCount();
 
         m1.start();
@@ -56,6 +74,7 @@ classdef move
 
         m1.power = 20;
         m1.limitMode = 'Tacho';
+        m1.brakeMode = 'Brake';
         m1.limitValue = 10;
         m1.resetTachoCount();
 
@@ -69,9 +88,10 @@ classdef move
     function resetPos(handle)
         m1 = handle.motorC;
 
-        m1.power = 20;
+        m1.power = -20;
         m1.limitMode = 'Tacho';
-        m1.limitValue = 1000;
+        m1.brakeMode = 'Brake';
+        m1.limitValue = 300;
         m1.resetTachoCount();
 
         m1.start();
@@ -80,13 +100,15 @@ classdef move
 
         m2 = handle.motorB;
 
-        m2.power = -20;
+        m2.power = 20;
         m2.limitMode = 'Tacho';
-        m2.limitValue = 1000;
+        m2.brakeMode = 'Brake';
+        m2.limitValue = 300;
         m2.resetTachoCount();
 
         m2.start();
         m2.waitFor();
         m2.stop();
+end
 end
 end
