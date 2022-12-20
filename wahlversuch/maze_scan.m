@@ -1,3 +1,5 @@
+%Zettel etwa 11cm x 17cm
+
 handle = EV3();
 handle.connect('usb','beep','on')
 
