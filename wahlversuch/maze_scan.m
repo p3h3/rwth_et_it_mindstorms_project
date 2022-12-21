@@ -6,7 +6,7 @@ handle.connect('usb','beep','on')
 close all
 
 laenge = 11;
-breite = 17;
+breite = 10;
 
 clc
 
@@ -50,10 +50,6 @@ for y=1:1:laenge
         end
     end
     move.Left2(handle, breite + 1)
-end
-
-for y=1:laenge
-    move.Up(handle);
 end
 
 move.resetPos(handle); 

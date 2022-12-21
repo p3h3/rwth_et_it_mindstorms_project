@@ -42,7 +42,7 @@ classdef move
         m1.power = -40;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
-        m1.limitValue = 20;
+        m1.limitValue = 18;
         m1.resetTachoCount();
 
         m1.start();
@@ -57,7 +57,7 @@ classdef move
         m1.power = -40;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
-        m1.limitValue = 18*fields;
+        m1.limitValue = 20*fields;
         m1.resetTachoCount();
 
         m1.start();
@@ -94,6 +94,9 @@ classdef move
         m1.limitValue = 400;
         m1.resetTachoCount();
 
+        m1.start();
+        m1.waitFor();
+        m1.stop();
 
         m2 = handle.motorB;
 
@@ -104,9 +107,9 @@ classdef move
         m2.resetTachoCount();
 
 
-        m1.syncedStart(m2);
-        m1.waitFor();
-        m1.syncedStop();
+        m2.start();
+        m2.waitFor();
+        m2.stop();
 end
 end
 end
