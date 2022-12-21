@@ -1,12 +1,3 @@
-% Skript zum Einscannen eines 15 * 15 Rasters aus weißen
-% und schwarzen Quadraten
+[values, xTarget, yTarget, xStart, yStart] = maze_scan(11, 13)
 
-handle = EV3();
-handle.connect('usb');
-
-farbsensor = handle.sensor4;
-
-laenge = 15;
-breite = 15;
-
-scan = einscannen(15, 10);
+solve_maze(values, 11, 13, xTarget, yTarget, xStart, yStart);

@@ -1,4 +1,4 @@
-function values = maze_scan()
+function [values, xTarget, yTarget, xStart, yStart] = maze_scan(breite, laenge)
     %Zettel etwa 11cm x 17cm
     
     handle = EV3();
@@ -6,10 +6,8 @@ function values = maze_scan()
     
     close all
     
-    laenge = 15;
     MAX_Y = laenge;
     
-    breite = 10;
     MAX_X = breite;
     
     MAX_VAL=10;
@@ -36,7 +34,7 @@ function values = maze_scan()
     found_target = 0;
     
     for y=1:1:laenge
-        move.Down(handle);
+        
         for x=1:breite
             move.Right(handle);
             scanValue = handle.sensor4.value;
@@ -52,13 +50,14 @@ function values = maze_scan()
             elseif scanValue == 2   %Startpunkt
     
                 if found_start == 0
-                plot(x,y,"o",'Color','g');
+                    plot(x,y,"o",'Color','g');
     
                     values(x,y) = 1;
                     xStart=x;
                     yStart=y;
                 else
                     values(x,y) = 2;
+                    plot(x,y,"*",'Color','y');
                 end
                 found_start = 1;
     
@@ -66,12 +65,13 @@ function values = maze_scan()
             elseif scanValue == 5   %Ziel
     
                 if found_target == 0
-                plot(x,y,"o",'Color','r');
+                    plot(x,y,"o",'Color','r');
                     values(x,y) = 0;
                     xTarget = x;
                     yTarget = y;
                 else
                     values(x,y) = 2;
+                    plot(x,y,"*",'Color','y');
                 end
     
                 found_target = 1
@@ -81,6 +81,7 @@ function values = maze_scan()
             end
     
         end
+        move.Down(handle);
         move.Left2(handle, breite + 1)
     end
     
@@ -89,8 +90,6 @@ function values = maze_scan()
     
     
     handle.disconnect();
-    
-    %solve(values, MAX_X, MAX_Y, xTarget, yTarget, xStart, yStart)
 
 end
 
