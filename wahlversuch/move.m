@@ -8,7 +8,11 @@ classdef move
         m2.power = 40;
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
+<<<<<<< HEAD
         m2.limitValue = 15;
+=======
+        m2.limitValue = 20;
+>>>>>>> 699d28fe69ac4b6772e7f4be895ae287957c7269
         m2.resetTachoCount();
 
         m2.start();
@@ -25,7 +29,11 @@ classdef move
         m2.power = -40;
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
+<<<<<<< HEAD
         m2.limitValue = 15;
+=======
+        m2.limitValue = 20;
+>>>>>>> 699d28fe69ac4b6772e7f4be895ae287957c7269
         m2.resetTachoCount();
 
         m2.start();
@@ -42,7 +50,11 @@ classdef move
         m1.power = -40;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
+<<<<<<< HEAD
         m1.limitValue = 15;
+=======
+        m1.limitValue = 20;
+>>>>>>> 699d28fe69ac4b6772e7f4be895ae287957c7269
         m1.resetTachoCount();
 
         m1.start();
@@ -75,7 +87,11 @@ classdef move
         m1.power = 40;
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
+<<<<<<< HEAD
         m1.limitValue = 15;
+=======
+        m1.limitValue = 20;
+>>>>>>> 699d28fe69ac4b6772e7f4be895ae287957c7269
         m1.resetTachoCount();
 
         m1.start();
@@ -88,7 +104,11 @@ classdef move
     function resetPos(handle)
         m1 = handle.motorC;
 
+<<<<<<< HEAD
         m1.power = -40;
+=======
+        m1.power = -30;
+>>>>>>> 699d28fe69ac4b6772e7f4be895ae287957c7269
         m1.limitMode = 'Tacho';
         m1.brakeMode = 'Brake';
         m1.limitValue = 400;
@@ -97,7 +117,11 @@ classdef move
 
         m2 = handle.motorB;
 
+<<<<<<< HEAD
         m2.power = 40;
+=======
+        m2.power = 30;
+>>>>>>> 699d28fe69ac4b6772e7f4be895ae287957c7269
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
         m2.limitValue = 400;
