@@ -85,6 +85,9 @@ classdef move
 
     
     %% bewegt Frabsensor und Papierträger auf die Ausgangsposition
+
+    %m1 = Scanner
+    %m2 = Bett
     function resetPos(handle)
         m1 = handle.motorC;
 
@@ -100,7 +103,7 @@ classdef move
 
         m2 = handle.motorB;
 
-        m2.power = 40;
+        m2.power = 30;
         m2.limitMode = 'Tacho';
         m2.brakeMode = 'Brake';
         m2.limitValue = 400;
