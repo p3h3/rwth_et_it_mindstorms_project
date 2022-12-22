@@ -14,11 +14,6 @@ function [values, xTarget, yTarget, xStart, yStart] = maze_scan(handle, axes, sp
     
     handle.sensor4.mode = DeviceMode.Color.Col;
     
-    %pause(5);
-    %plot(0,0,"diamond",'Color','b');
-    %plot(breite+1,laenge+1,"diamond",'Color','b');
-    xlim([-1 breite+2])
-    ylim([-1 laenge+2])
     
     move.resetPos(speed, handle);
     
