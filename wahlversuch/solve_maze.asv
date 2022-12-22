@@ -1,5 +1,4 @@
-
-function solve_maze(MAP, MAX_X, MAX_Y, xTarget, yTarget, xStart, yStart)
+function solve_maze(axis, MAP, MAX_X, MAX_Y, xTarget, yTarget, xStart, yStart)
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %LISTS USED FOR ALGORITHM
@@ -128,14 +127,14 @@ function solve_maze(MAP, MAX_X, MAX_Y, xTarget, yTarget, xStart, yStart)
         end;
      j=size(Optimal_path,1);
      %Plot the Optimal Path!
-     p=plot(Optimal_path(j,1),Optimal_path(j,2),'diamond');
+     p=plot(axis, Optimal_path(j,1),Optimal_path(j,2),'diamond');
      j=j-1;
      for i=j:-1:1
       pause(.25);
       set(p,'XData',Optimal_path(i,1),'YData',Optimal_path(i,2));
      drawnow ;
      end;
-     plot(Optimal_path(:,1),Optimal_path(:,2));
+     plot(axis, Optimal_path(:,1),Optimal_path(:,2));
     else
      pause(1);
      h=msgbox('Sorry, No path exists to the Target!','warn');
